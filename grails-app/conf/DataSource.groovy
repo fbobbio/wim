@@ -18,19 +18,19 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/wim?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
         dataSource {
-            dbCreate = "update"
+            dbCreate = ""
             url = "jdbc:mysql://localhost/wim_test?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     production {
         dataSource {
-            dbCreate = "update"
+            dbCreate = ""
             url = "jdbc:mysql://localhost/wim_prod?useUnicode=yes&characterEncoding=UTF-8"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
