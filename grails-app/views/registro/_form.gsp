@@ -83,6 +83,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: registroInstance, field: 'idN', 'error')} required">
+	<label for="idN">
+		<g:message code="registro.idN.label" default="Id N" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="idN" type="number" value="${registroInstance.idN}" required=""/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: registroInstance, field: 'instante', 'error')} required">
 	<label for="instante">
 		<g:message code="registro.instante.label" default="Instante" />

@@ -12,6 +12,9 @@ class Planoperacion {
 
 	static mapping = {
 		id generator: "assigned"
+    baseclasif column: "idBaseCla"
+    cantPeriodo column: "CantPeriodo"
+    descripcion column: "Descripcion"
 		version false
 	}
 

@@ -5,7 +5,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder
 
 class Registro implements Serializable {
 
-	Integer id
+	Integer idN
 	Date instante
 	Integer carril
 	Integer sentido
@@ -20,26 +20,47 @@ class Registro implements Serializable {
 
 	int hashCode() {
 		def builder = new HashCodeBuilder()
-		builder.append id
+		builder.append idN
 		builder.append instante
-		builder.append idDispositivo
+		builder.append dispositivo
 		builder.toHashCode()
 	}
 
 	boolean equals(other) {
 		if (other == null) return false
 		def builder = new EqualsBuilder()
-		builder.append id, other.id
+		builder.append idN, other.idN
 		builder.append instante, other.instante
-		builder.append idDispositivo, other.idDispositivo
+		builder.append dispositivo, other.dispositivo
 		builder.isEquals()
 	}
+
+  /*def getId() {
+    return id
+  }
+  
+  static Registro get(Integer idNp, Date instantep, Dispositivo dispop) {
+    return get(new Registro(idN: idNp, instante: instantep, dispositivo: dispop))
+  }*
+
+  def getId() {
+    //println "$idN  $instante  $dispositivo"
+    println this
+    //return this.id //egistro.get(new Registro(idN: idN,instante: instante,dispositivo: dispositivo))
+  }*/
 
 	static hasMany = [regejes: Regeje]
 	static belongsTo = [Dispositivo, Rutatramo]
 
 	static mapping = {
-		id composite: ["id", "instante", "dispositivo"]
+		id composite: ["idN", "instante", "dispositivo"]
+    columns {
+      instante(column: "Instante")
+      idN(column: "id")
+      dispositivo("idDispositivo")
+    }
+    idN column: "id"
+    instante column: "Instante"
     dispositivo column: "idDispositivo"
     idBaseClasif column: "idBaseClasif"
     idBaseVehiculo column: "idBaseVehiculo"
@@ -52,6 +73,7 @@ class Registro implements Serializable {
 	}
 
 	static constraints = {
+    idN(unique: ["instante","dispositivo"])
 		carril nullable: true
 		sentido nullable: true
 		idBaseClasif nullable: true

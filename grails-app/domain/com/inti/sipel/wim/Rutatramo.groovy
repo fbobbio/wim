@@ -13,6 +13,9 @@ class Rutatramo {
 
 	static mapping = {
 		id generator: "assigned"
+    kmDesde column: "KmDesde"
+    kmHasta column: "KmHasta"
+    ruta column: "idRuta"
 		version false
 	}
 

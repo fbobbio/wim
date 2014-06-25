@@ -104,22 +104,20 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${registroInstance?.idN}">
+				<li class="fieldcontain">
+					<span id="idN-label" class="property-label"><g:message code="registro.idN.label" default="Id N" /></span>
+					
+						<span class="property-value" aria-labelledby="idN-label"><g:fieldValue bean="${registroInstance}" field="idN"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${registroInstance?.instante}">
 				<li class="fieldcontain">
 					<span id="instante-label" class="property-label"><g:message code="registro.instante.label" default="Instante" /></span>
 					
 						<span class="property-value" aria-labelledby="instante-label"><g:formatDate date="${registroInstance?.instante}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${registroInstance?.regejes}">
-				<li class="fieldcontain">
-					<span id="regejes-label" class="property-label"><g:message code="registro.regejes.label" default="Regejes" /></span>
-					
-						<g:each in="${registroInstance.regejes}" var="r">
-						<span class="property-value" aria-labelledby="regejes-label"><g:link controller="regeje" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>

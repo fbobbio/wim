@@ -16,7 +16,7 @@ class RegistroController {
     }
 
     def show(Registro registroInstance) {
-        respond registroInstance
+        respond Registro.get(new Registro(idN: params.idN, instante: params.instante, dispositivo: params.dispositivo))
     }
 
     def create() {
