@@ -130,14 +130,19 @@
 					
 				</li>
 				</g:if>
-			
-			</ol>
-			<g:form url="[resource:registroInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${registroInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
+
+      <li class="fieldcontain">
+        <span id="image-label" class="property-label"><g:message code="registro.image.label" default="Imágen" /></span>
+          <span class="property-value" aria-labelledby="image-label"><a href="/wim/assets/mionca.jpeg"><asset:image src="mionca.jpeg" alt="Imágen" width="60%" height="auto" onclick="location.href=this.src;"/></a></span>
+      </li>
+
+    </ol>
+    <g:form url="[resource:registroInstance, action:'delete']" method="DELETE">
+      <fieldset class="buttons">
+        <g:link class="edit" action="edit" resource="${registroInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+        <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+      </fieldset>
+    </g:form>
+  </div>
+</body>
 </html>

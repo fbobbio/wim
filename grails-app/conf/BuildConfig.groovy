@@ -71,7 +71,7 @@ grails.project.dependency.resolution = {
 
         //runtime ':db-reverse-engineer:0.5'
         // compile ":kickstart-with-bootstrap:1.1.0"
-        runtime ":twitter-bootstrap:3.2.1"
+        //runtime ":twitter-bootstrap:3.2.1"
 
         //runtime ":resources:1.2.8"
 
