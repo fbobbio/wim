@@ -52,6 +52,7 @@ grails.project.dependency.resolution = {
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
 
         compile "org.springframework:spring-orm:$springVersion"
+
     }
 
     plugins {
@@ -69,6 +70,8 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.11.1"
 
         //runtime ':db-reverse-engineer:0.5'
+        // compile ":kickstart-with-bootstrap:1.1.0"
+        runtime ":twitter-bootstrap:3.2.1"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.7.4"
