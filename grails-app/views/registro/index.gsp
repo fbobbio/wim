@@ -12,7 +12,6 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-registro" class="content scaffold-list" role="main">
@@ -23,37 +22,37 @@
 			<table>
 			<thead>
 					<tr>
-					
+
 						<g:sortableColumn property="carril" title="${message(code: 'registro.carril.label', default: 'Carril')}" />
-					
-						<g:sortableColumn property="sentido" title="${message(code: 'registro.sentido.label', default: 'Sentido')}" />
-					
-						<g:sortableColumn property="idBaseClasif" title="${message(code: 'registro.idBaseClasif.label', default: 'Id Base Clasif')}" />
-					
-						<g:sortableColumn property="idBaseVehiculo" title="${message(code: 'registro.idBaseVehiculo.label', default: 'Id Base Vehiculo')}" />
-					
+
+						<g:sortableColumn property="instante" title="${message(code: 'registro.instante.label', default: 'Instante')}" />
+
 						<g:sortableColumn property="tempRuta" title="${message(code: 'registro.tempRuta.label', default: 'Temp Ruta')}" />
-					
+
+						<g:sortableColumn property="velocidad" title="${message(code: 'registro.velocidad.label', default: 'Velocidad')}" />
+
+						<g:sortableColumn property="aceleracion" title="${message(code: 'registro.aceleracion.label', default: 'Aceleración')}" />
+
 						<g:sortableColumn property="pesoTotal" title="${message(code: 'registro.pesoTotal.label', default: 'Peso Total')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${registroInstanceList}" status="i" var="registroInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
+
 						<td><g:link action="show" id="${registroInstance.id}" params="[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]">${fieldValue(bean: registroInstance, field: "carril")}</g:link></td>
-					
-						<td>${fieldValue(bean: registroInstance, field: "sentido")}</td>
-					
-						<td>${fieldValue(bean: registroInstance, field: "idBaseClasif")}</td>
-					
-						<td>${fieldValue(bean: registroInstance, field: "idBaseVehiculo")}</td>
-					
+
+						<td>${fieldValue(bean: registroInstance, field: "instante")}</td>
+
 						<td>${fieldValue(bean: registroInstance, field: "tempRuta")}</td>
-					
+
+						<td>${fieldValue(bean: registroInstance, field: "velocidad")}</td>
+
+						<td>${fieldValue(bean: registroInstance, field: "aceleracion")}</td>
+
 						<td>${fieldValue(bean: registroInstance, field: "pesoTotal")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>
