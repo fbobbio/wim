@@ -41,20 +41,20 @@
 				</li>
 				</g:if>
 
-				<g:if test="${registroInstance?.idBaseClasif}">
+				<g:if test="${registroInstance?.baseClasif}">
 				<li class="fieldcontain">
-					<span id="idBaseClasif-label" class="property-label"><g:message code="registro.idBaseClasif.label" default="Id Base Clasif" /></span>
+					<span id="baseClasif-label" class="property-label"><g:message code="registro.baseClasif.label" default="Base Clasif" /></span>
 
-						<span class="property-value" aria-labelledby="idBaseClasif-label"><g:fieldValue bean="${registroInstance}" field="idBaseClasif"/></span>
+						<span class="property-value" aria-labelledby="baseClasif-label"><g:fieldValue bean="${registroInstance}" field="baseClasif.descripcion"/></span>
 
 				</li>
 				</g:if>
 
-				<g:if test="${registroInstance?.idBaseVehiculo}">
+				<g:if test="${registroInstance?.baseVehiculo}">
 				<li class="fieldcontain">
-					<span id="idBaseVehiculo-label" class="property-label"><g:message code="registro.idBaseVehiculo.label" default="Id Base Vehiculo" /></span>
+					<span id="baseVehiculo-label" class="property-label"><g:message code="registro.baseVehiculo.label" default="Base Vehículo" /></span>
 
-						<span class="property-value" aria-labelledby="idBaseVehiculo-label"><g:fieldValue bean="${registroInstance}" field="idBaseVehiculo"/></span>
+						<span class="property-value" aria-labelledby="baseVehiculo-label"><g:fieldValue bean="${registroInstance}" field="baseVehiculo.descripcion"/></span>
 
 				</li>
 				</g:if>
@@ -104,15 +104,6 @@
 				</li>
 				</g:if>
 
-				<g:if test="${registroInstance?.idN}">
-				<li class="fieldcontain">
-					<span id="idN-label" class="property-label"><g:message code="registro.idN.label" default="Id N" /></span>
-
-						<span class="property-value" aria-labelledby="idN-label"><g:fieldValue bean="${registroInstance}" field="idN"/></span>
-
-				</li>
-				</g:if>
-
 				<g:if test="${registroInstance?.instante}">
 				<li class="fieldcontain">
 					<span id="instante-label" class="property-label"><g:message code="registro.instante.label" default="Instante" /></span>
@@ -126,7 +117,7 @@
 				<li class="fieldcontain">
 					<span id="rutatramo-label" class="property-label"><g:message code="registro.rutatramo.label" default="Rutatramo" /></span>
 
-						<span class="property-value" aria-labelledby="rutatramo-label"><g:link controller="rutatramo" action="show" id="${registroInstance?.rutatramo?.id}">${registroInstance?.rutatramo?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="rutatramo-label"><g:fieldValue bean="${registroInstance}" field="rutatramo.descripcion"/></span>
 
 				</li>
 				</g:if>

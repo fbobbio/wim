@@ -14,6 +14,8 @@ class Basevehiculo {
 	static mapping = {
 		id generator: "assigned"
 		version false
+    cantEjes column: "CantEjes"
+    tipoVehiculo column: "tipoVehiculo"
 	}
 
 	static constraints = {

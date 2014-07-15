@@ -237,6 +237,7 @@ fieldset,
 .fieldcontain .property-value {
 	display: block;
 	margin-left: 27%;
+  font-weight: bold;
 }
 
 label {
