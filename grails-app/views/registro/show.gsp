@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="tempRuta-label" class="property-label"><g:message code="registro.tempRuta.label" default="Temp Ruta" /></span>
 
-						<span class="property-value" aria-labelledby="tempRuta-label"><g:fieldValue bean="${registroInstance}" field="tempRuta"/></span>
+						<span class="property-value" aria-labelledby="tempRuta-label"><g:fieldValue bean="${registroInstance}" field="tempRuta"/><g:message code="registro.tempunidad.label" default=" °C"/></span>
 
 				</li>
 				</g:if>
@@ -72,7 +72,7 @@
 				<li class="fieldcontain">
 					<span id="pesoTotal-label" class="property-label"><g:message code="registro.pesoTotal.label" default="Peso Total" /></span>
 
-						<span class="property-value" aria-labelledby="pesoTotal-label"><g:fieldValue bean="${registroInstance}" field="pesoTotal"/></span>
+						<span class="property-value" aria-labelledby="pesoTotal-label"><g:fieldValue bean="${registroInstance}" field="pesoTotal"/><g:message code="registro.pesototalunidad.label" default=" Kg"/></span>
 
 				</li>
 				</g:if>
