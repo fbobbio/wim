@@ -13,7 +13,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.stop.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.discard.label"/></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.getaway.label"/></g:link></li>
 			</ul>
 		</div>
 		<div id="show-registro" class="content scaffold-show" role="main">
@@ -132,7 +132,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.stop.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.discard.label"/></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.getaway.label"/></g:link></li>
 			</ul>
 		</div>
   </div>
