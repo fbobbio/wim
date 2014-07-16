@@ -117,3 +117,5 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+// límite de peso a partir del cual se debería detener al vehículo, valor en Kilogramos
+grails.wim.peso.limite = 50000
