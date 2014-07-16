@@ -19,7 +19,7 @@ environments {
     development {
         dataSource {
             dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/wim?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://192.168.126.165/wim?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
