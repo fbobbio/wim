@@ -13,6 +13,8 @@ class Registro implements Serializable {
 	Double pesoTotal
 	Double velocidad
 	Double aceleracion
+  Boolean detencion
+  Boolean fuga
   Baseclasif baseClasif
   Basevehiculo baseVehiculo
 	Dispositivo dispositivo
