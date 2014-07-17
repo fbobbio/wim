@@ -58,12 +58,22 @@ class RegistroController {
         def fecha = Date.parseToStringDate(params.instante)
         registroInstance = Registro.get(new Registro(idN: params.idN, instante: fecha, dispositivo: params.dispositivo))
         registroInstance.detencion = true
-        registroInstance.save(flush:true, failOnError:true)
+        registroInstance.save(flush:true)
 
         flash.message = message(code: 'Detención guardada en el registro')
         redirect(action: "show", params: [idN: registroInstance.idN, instante: fecha.format("yyyy-MM-dd' 'HH:mm:ss.SSSZ"), dispositivo: registroInstance.dispositivo.id])
     }
 
+    @Transactional
+    def getaway(Registro registroInstance) {
+        def fecha = Date.parseToStringDate(params.instante)
+        registroInstance = Registro.get(new Registro(idN: params.idN, instante: fecha, dispositivo: params.dispositivo))
+        registroInstance.fuga = true
+        registroInstance.save(flush:true)
+
+        flash.message = message(code: 'Fuga guardada en el registro')
+        redirect(action: "show", params: [idN: registroInstance.idN, instante: fecha.format("yyyy-MM-dd' 'HH:mm:ss.SSSZ"), dispositivo: registroInstance.dispositivo.id])
+    }
     @Transactional
     def update(Registro registroInstance) {
         if (registroInstance == null) {

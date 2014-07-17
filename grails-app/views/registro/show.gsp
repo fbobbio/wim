@@ -13,7 +13,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="stop" id="${registroInstance.id}" params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'><g:message code="default.stop.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.getaway.label"/></g:link></li>
+				<li><g:link class="create" action="getaway" id="${registroInstance.id}" params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'><g:message code="default.getaway.label"/></g:link></li>
 			</ul>
 		</div>
 		<div id="show-registro" class="content scaffold-show" role="main">
@@ -62,6 +62,11 @@
 				<li class="fieldcontain">
 					<span id="detencion-label" class="property-label"><g:message code="registro.detencion.label" default="Detención" /></span>
 						<span class="property-value" aria-labelledby="detencion-label"><g:fieldValue bean="${registroInstance}" field="detencion"/></span>
+				</li>
+
+				<li class="fieldcontain">
+					<span id="fuga-label" class="property-label"><g:message code="registro.fuga.label" default="Fuga" /></span>
+						<span class="property-value" aria-labelledby="fuga-label"><g:fieldValue bean="${registroInstance}" field="fuga"/></span>
 				</li>
 
 				<g:if test="${registroInstance?.tempRuta}">
