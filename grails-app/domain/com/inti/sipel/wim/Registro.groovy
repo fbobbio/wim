@@ -70,5 +70,7 @@ class Registro implements Serializable {
 		pesoTotal nullable: true
 		velocidad nullable: true
 		aceleracion nullable: true
+    detencion nullable: true
+    fuga nullable: true
 	}
 }
