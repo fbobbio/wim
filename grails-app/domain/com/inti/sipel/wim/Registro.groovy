@@ -61,7 +61,7 @@ class Registro implements Serializable {
 	}
 
 	static constraints = {
-    idN(unique: ["instante","dispositivo"])
+    //idN(unique: ["instante","dispositivo"])
 		carril nullable: true
 		sentido nullable: true
 		baseClasif nullable: true
