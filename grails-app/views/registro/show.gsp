@@ -12,8 +12,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.stop.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.discard.label"/></g:link></li>
+				<li><g:link class="list" action="stop" id="${registroInstance.id}" params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'><g:message code="default.stop.label"/></g:link></li>
+				<li><g:link class="create" action="getaway" id="${registroInstance.id}" params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'><g:message code="default.getaway.label"/></g:link></li>
 			</ul>
 		</div>
 		<div id="show-registro" class="content scaffold-show" role="main">
@@ -59,11 +59,21 @@
 				</li>
 				</g:if>
 
+				<li class="fieldcontain">
+					<span id="detencion-label" class="property-label"><g:message code="registro.detencion.label" default="Detención" /></span>
+						<span class="property-value" aria-labelledby="detencion-label"><g:fieldValue bean="${registroInstance}" field="detencion"/></span>
+				</li>
+
+				<li class="fieldcontain">
+					<span id="fuga-label" class="property-label"><g:message code="registro.fuga.label" default="Fuga" /></span>
+						<span class="property-value" aria-labelledby="fuga-label"><g:fieldValue bean="${registroInstance}" field="fuga"/></span>
+				</li>
+
 				<g:if test="${registroInstance?.tempRuta}">
 				<li class="fieldcontain">
 					<span id="tempRuta-label" class="property-label"><g:message code="registro.tempRuta.label" default="Temp Ruta" /></span>
 
-						<span class="property-value" aria-labelledby="tempRuta-label"><g:fieldValue bean="${registroInstance}" field="tempRuta"/></span>
+						<span class="property-value" aria-labelledby="tempRuta-label"><g:fieldValue bean="${registroInstance}" field="tempRuta"/><g:message code="registro.tempunidad.label" default=" °C"/></span>
 
 				</li>
 				</g:if>
@@ -72,7 +82,7 @@
 				<li class="fieldcontain">
 					<span id="pesoTotal-label" class="property-label"><g:message code="registro.pesoTotal.label" default="Peso Total" /></span>
 
-						<span class="property-value" aria-labelledby="pesoTotal-label"><g:fieldValue bean="${registroInstance}" field="pesoTotal"/></span>
+						<span class="property-value" aria-labelledby="pesoTotal-label"><g:fieldValue bean="${registroInstance}" field="pesoTotal"/><g:message code="registro.pesototalunidad.label" default=" Kg"/></span>
 
 				</li>
 				</g:if>
@@ -108,7 +118,7 @@
 				<li class="fieldcontain">
 					<span id="instante-label" class="property-label"><g:message code="registro.instante.label" default="Instante" /></span>
 
-						<span class="property-value" aria-labelledby="instante-label"><g:formatDate date="${registroInstance?.instante}" /></span>
+						<span class="property-value" aria-labelledby="instante-label"><g:formatDate date="${registroInstance?.instante}" type="datetime" style="MEDIUM"/></span>
 
 				</li>
 				</g:if>
@@ -132,7 +142,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.stop.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.discard.label"/></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.getaway.label"/></g:link></li>
 			</ul>
 		</div>
   </div>

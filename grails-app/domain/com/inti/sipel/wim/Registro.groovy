@@ -13,6 +13,8 @@ class Registro implements Serializable {
 	Double pesoTotal
 	Double velocidad
 	Double aceleracion
+  Boolean detencion
+  Boolean fuga
   Baseclasif baseClasif
   Basevehiculo baseVehiculo
 	Dispositivo dispositivo
@@ -36,7 +38,7 @@ class Registro implements Serializable {
 	}
 
 	static hasMany = [regejes: Regeje]
-	static belongsTo = [Baseclasif,Dispositivo, Rutatramo]
+	static belongsTo = [Basevehiculo,Baseclasif,Dispositivo, Rutatramo]
 
 	static mapping = {
 		id composite: ["idN", "instante", "dispositivo"]
