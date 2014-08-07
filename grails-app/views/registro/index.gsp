@@ -3,59 +3,60 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="nano">
 		<g:set var="entityName" value="${message(code: 'registro.label', default: 'Registro')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-registro" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-			</ul>
-		</div>
-		<div id="list-registro" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
+	<script type="text/javascript">
+  		setInterval(function(){location.assign("${createLink(controller: 'registro',action: 'index', absolute: 'true')}")},10000);
+	</script>
+		<g:each in="${registroInstanceList}" status="i" var="registroInstance">
+											
+			<g:if test="${i == 0}">
+				<div class="row">
+				    <div class="col-lg-12">
+					<h1 class="page-header">Vehículo <small>a desviar</small></h1>
+				    </div>
+				</div>
+     				<div class="row">
+
+				    <div class="col-md-8">
+					<img class="img-responsive" src="${fieldValue(bean: registroInstance, field: 'imagenurl')}" alt="">
+				    </div>
+
+				    <div class="col-md-4">
+						<p><button type="button" class="btn btn-default btn-lg" onclick='document.location="<g:createLink action='getaway' id='${registroInstance.id}' params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'/>" '><asset:image src="fuga.png" alt="Fuga"/><br><h3>Registrar Fuga</h3></button>											
+						<button type="button" class="btn btn-default btn-lg" onclick='document.location="<g:createLink action='stop' id='${registroInstance.id}' params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'/>" '><asset:image src="pesar.png" alt="Pesar"/><br><h3>Registrar Peso</h3></button></p>
+
+						<p>Fecha y Hora: ${fieldValue(bean: registroInstance, field: "instante")}</p>
+                  		    </div>
+
+				</div>
+
+				<div class="row">
+
+            				<div class="col-lg-12">
+                				<h3 class="page-header">Próximos vehículos</h3>
+            				</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
+			<g:else>
+     					
+				<div class="col-sm-3 col-xs-6">
+					<a href="#">
+					    <img class="img-responsive portfolio-item" src="${fieldValue(bean: registroInstance, field: 'imagenurl')}" alt="">
+					</a>
+					<p>Fecha y Hora: ${fieldValue(bean: registroInstance, field: "instante")}</p>
+				</div>
 
-						<g:sortableColumn property="pesoTotal" title="${message(code: 'registro.pesoTotal.label', default: 'Peso Total (Kg)')}" />
+			</g:else>
 
-						<g:sortableColumn property="instante" title="${message(code: 'registro.instante.label', default: 'Instante')}" />
 
-						<g:sortableColumn property="tempRuta" title="${message(code: 'registro.tempRuta.label', default: 'Temperatura Ruta (°C)')}" />
 
-						<g:sortableColumn property="velocidad" title="${message(code: 'registro.velocidad.label', default: 'Velocidad (Km/h)')}" />
+		</g:each>
 
-						<g:sortableColumn property="aceleracion" title="${message(code: 'registro.aceleracion.label', default: 'Aceleración')}" />
-
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${registroInstanceList}" status="i" var="registroInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" onclick='document.location="<g:createLink action='show' id='${registroInstance.id}' params='[idN: registroInstance.idN, instante: registroInstance.instante, dispositivo: registroInstance.dispositivo.id]'/>" '>
-
-						<td style="text-align: center;">${fieldValue(bean: registroInstance, field: "pesoTotal")}</td>
-
-						<td style="text-align: center;">${fieldValue(bean: registroInstance, field: "instante")}</td>
-
-						<td style="text-align: center;">${fieldValue(bean: registroInstance, field: "tempRuta")}</td>
-
-						<td style="text-align: center;">${fieldValue(bean: registroInstance, field: "velocidad")}</td>
-
-						<td style="text-align: center;">${fieldValue(bean: registroInstance, field: "aceleracion")}</td>
-
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${registroInstanceCount ?: 0}" />
 			</div>
-		</div>
+
+		
 	</body>
 </html>

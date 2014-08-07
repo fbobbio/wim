@@ -1,10 +1,13 @@
 dataSource {
+	validationQuery = "SELECT 1"
+	testWhileIdle = true
+	testOnBorrow = true
     pooled = true
     jmxExport = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
     username = "root"
-    password = "chulo"
+    password = "1234"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -19,19 +22,19 @@ environments {
     development {
         dataSource {
             dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://192.168.126.165/wim?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://192.168.126.67/wim2?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
         dataSource {
             dbCreate = ""
-            url = "jdbc:mysql://localhost/wim_test?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://192.168.126.67/wim2?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     production {
         dataSource {
             dbCreate = ""
-            url = "jdbc:mysql://localhost/wim_prod?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://192.168.126.67/wim2?useUnicode=yes&characterEncoding=UTF-8"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true

@@ -13,12 +13,13 @@ class Registro implements Serializable {
 	Double pesoTotal
 	Double velocidad
 	Double aceleracion
-  Boolean detencion
-  Boolean fuga
-  Baseclasif baseClasif
-  Basevehiculo baseVehiculo
+  	Boolean detencion
+  	Boolean fuga
+  	Baseclasif baseClasif
+  	Basevehiculo baseVehiculo
 	Dispositivo dispositivo
 	Rutatramo rutatramo
+	String imagenurl
 
 	int hashCode() {
 		def builder = new HashCodeBuilder()
@@ -42,21 +43,25 @@ class Registro implements Serializable {
 
 	static mapping = {
 		id composite: ["idN", "instante", "dispositivo"]
-    columns {
-      instante(column: "Instante")
-      idN(column: "id")
-      dispositivo("idDispositivo")
-    }
-    idN column: "id"
-    instante column: "Instante"
-    dispositivo column: "idDispositivo"
-    baseClasif column: "idBaseClasif"
-    baseVehiculo column: "idBaseVehiculo"
-    rutatramo column: "idRutaTramo"
-    pesoTotal column: "PesoTotal"
-    tempRuta column: "TempRuta"
-    sentido column: "Sentido"
-    carril column: "Carril"
+    		columns {
+      			instante(column: "Instante")
+      			idN(column: "id")
+      			dispositivo("idDispositivo")
+    			}
+    		idN column: "id"
+    		instante column: "Instante"
+    		dispositivo column: "idDispositivo"
+    		baseClasif column: "idBaseClasif"
+    		baseVehiculo column: "idBaseVehiculo"
+    		rutatramo column: "idRutaTramo"
+    		pesoTotal column: "PesoTotal"
+    		tempRuta column: "TempRuta"
+    		sentido column: "Sentido"
+    		carril column: "Carril"
+		fuga column: "Fuga"
+		detencion column: "Detencion"
+		imagenurl column: "Imagenurl"
+		
 		version false
 	}
 
@@ -70,7 +75,7 @@ class Registro implements Serializable {
 		pesoTotal nullable: true
 		velocidad nullable: true
 		aceleracion nullable: true
-    detencion nullable: true
-    fuga nullable: true
+    		detencion nullable: true
+    		fuga nullable: true
 	}
 }

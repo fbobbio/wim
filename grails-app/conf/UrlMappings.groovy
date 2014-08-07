@@ -7,7 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
-        "500"(view:'/error')
+        //"/"(view:"/index")
+
+	"/" ( controller:'registro', action:'index' )        
+	"500"(view:'/error')
 	}
 }

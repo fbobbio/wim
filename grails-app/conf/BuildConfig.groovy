@@ -5,6 +5,10 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
+
+//cambiamos el puerto por defecto
+grails.server.port.http=8090
+
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.fork = [
@@ -56,6 +60,10 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
+	//plugin para login
+	compile ":nimble:0.5.1"
+
+
         // plugins for the build system only
         build ":tomcat:7.0.53"
 
