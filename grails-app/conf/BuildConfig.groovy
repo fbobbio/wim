@@ -61,7 +61,7 @@ grails.project.dependency.resolution = {
 
     plugins {
 	//plugin para login
-	compile ":nimble:0.5.1"
+	//compile ":nimble:0.5.1"
 
 
         // plugins for the build system only
